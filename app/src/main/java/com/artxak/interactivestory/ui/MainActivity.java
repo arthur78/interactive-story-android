@@ -10,6 +10,8 @@ import android.widget.EditText;
 
 import com.artxak.interactivestory.R;
 
+import java.util.Stack;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText nameField;
@@ -30,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
                 startStory(name);
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        nameField.setText("");
     }
 
     private void startStory(String name) {
